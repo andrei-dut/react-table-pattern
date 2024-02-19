@@ -12,7 +12,7 @@ import { CheckedCb } from '../CustomCheckbox/CustomCheckbox.types';
 const TablePattern = ({ tableConfig }: TablePatternProps) => {
   const {
     rows = [],
-    cells,
+    cells = [],
     onClickRow,
     isCell,
     updateCheckboxes,
@@ -126,7 +126,6 @@ const WrapTable = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  color: ${({ theme }) => theme.colors.white70};
   font-weight: 600;
   .table-head,
   .table-body {
@@ -138,7 +137,9 @@ const WrapTable = styled.div`
     padding-bottom: 0px;
   }
   .table-body {
-    ${({ theme }) => theme.wrapper}
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #121212e6;
     position: relative;
     flex: 1;
   }
@@ -160,7 +161,7 @@ const WrapTable = styled.div`
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    background-color: ${({ theme }) => theme.colors.background3};
+    background-color: #1e1e1e;
     margin-top: 12px;
     width: 100%;
     &:first-child {
