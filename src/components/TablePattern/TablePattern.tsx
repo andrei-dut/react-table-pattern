@@ -7,6 +7,7 @@ import CustomCheckbox from '../CustomCheckbox/CustomCheckbox';
 import { getPropertyByString } from '../../utils';
 import { TablePatternProps } from './TablePattern.types';
 import { CheckedCb } from '../CustomCheckbox/CustomCheckbox.types';
+
 // example use
 
 const TablePattern = ({ tableConfig }: TablePatternProps) => {
@@ -123,10 +124,16 @@ const TablePattern = ({ tableConfig }: TablePatternProps) => {
 export default React.memo(TablePattern);
 
 const WrapTable = styled.div`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
   display: flex;
   flex-direction: column;
   flex: 1;
   font-weight: 600;
+
   .table-head,
   .table-body {
     padding: 16px;

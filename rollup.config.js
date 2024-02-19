@@ -7,7 +7,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import replace from '@rollup/plugin-replace';
 import babel from '@rollup/plugin-babel';
 import image from '@rollup/plugin-image';
-
+import postcss from 'rollup-plugin-postcss';
 import svgr from '@svgr/rollup';
 
 export default [
@@ -27,6 +27,7 @@ export default [
       },
     ],
     plugins: [
+      postcss(),
       peerDepsExternal(),
       resolve(),
       commonjs(),
@@ -42,7 +43,7 @@ export default [
       image(),
       svgr(),
     ],
-    external: ['react', 'react-dom', 'styled-components'],
+    external: ['react', 'react-dom', 'styled-components', /\.css$/],
   },
   {
     input: 'src/index.tsx',
